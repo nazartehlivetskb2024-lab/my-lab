@@ -1,0 +1,310 @@
+/* ==========================================================
+   Оновлений дизайн (Повноцінний банер + Apple Style + Повернуте Портфоліо)
+========================================================== */
+
+/* Базові налаштування */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+    color: #1d1d1f;
+    background-color: #f5f5f7;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+.container {
+    width: 90%;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+/* 1. Чорна шапка з розмиттям */
+.header {
+    background: rgba(0, 0, 0, 0.85);
+    backdrop-filter: saturate(180%) blur(20px);
+    -webkit-backdrop-filter: saturate(180%) blur(20px);
+    padding: 16px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+}
+
+.header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    color: #ffffff;
+}
+
+.nav-menu ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+.nav-menu a {
+    text-decoration: none;
+    color: #f5f5f7;
+    font-size: 14px;
+    opacity: 0.8;
+    transition: opacity 0.3s ease;
+}
+
+.nav-menu a:hover {
+    opacity: 1;
+}
+
+/* 2. Універсальна скляна картка */
+.glass-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.glass-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);
+}
+
+/* 3. Головний банер */
+.hero-section {
+    /* ОНОВЛЕНО ШЛЯХ: тепер CSS шукає фото в папці IMG на рівень вище */
+    background-image: url('../IMG/hero-bg.jpg'); 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 180px 0 120px; 
+    text-align: center;
+    color: #ffffff;
+    position: relative;
+}
+
+/* 3.1. Блок для тексту тепер прозорий! */
+.hero-content {
+    background: transparent; /* Робимо прозорим */
+    max-width: 800px;
+    margin: 0 auto; 
+}
+
+/* Тінь до тексту заголовка для читабельності */
+.hero-content h1 {
+    font-size: 48px;
+    font-weight: 700;
+    margin-bottom: 16px;
+    letter-spacing: -0.5px;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5); /* Додаємо тінь до заголовка */
+}
+
+/* Тінь до тексту підзаголовка для читабельності */
+.hero-content p {
+    font-size: 20px;
+    color: rgba(255, 255, 255, 0.85);
+    text-shadow: 0 1px 5px rgba(0, 0, 0, 0.5); /* Додаємо тінь до підзаголовка */
+}
+
+/* 4. Заголовки секцій */
+.section-title {
+    text-align: center;
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 40px;
+    color: #1d1d1f;
+}
+
+/* 5. Концепції */
+.concepts-section {
+    padding: 60px 0; /* Зменшили відступи зверху і знизу */
+}
+
+.concepts-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+}
+
+.concept-card {
+    flex: 1;
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.concept-card .icon {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.concept-card h3 {
+    margin-bottom: 12px;
+    font-size: 20px;
+    color: #1d1d1f;
+}
+
+.concept-card p {
+    color: #86868b;
+    font-size: 15px;
+    line-height: 1.6;
+}
+
+/* 6. Повернуте Портфоліо */
+.portfolio-section {
+    padding: 60px 0; /* Вирівняли паддінги з секцією концепцій */
+}
+
+.portfolio-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.project-item {
+    overflow: hidden;
+    padding: 0;
+}
+
+.project-item img {
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+    display: block;
+}
+
+.project-info {
+    padding: 20px;
+}
+
+.project-info h3 {
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
+.project-info p {
+    color: #86868b;
+    font-size: 14px;
+}
+
+/* 7. Контакти */
+.contacts-section {
+    padding: 20px 0 80px;
+}
+
+.contacts-content {
+    display: flex;
+    overflow: hidden;
+}
+
+.contact-info-premium {
+    flex: 1; 
+    padding: 50px;
+    background-color: #fcfcfc;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    border-right: 1px solid rgba(0,0,0,0.05);
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.contact-item .icon-box {
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border-radius: 14px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 22px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.contact-item .text-box {
+    display: flex;
+    flex-direction: column;
+}
+
+.contact-item .label {
+    font-size: 12px;
+    color: #86868b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 4px;
+}
+
+.contact-item .value {
+    font-size: 15px;
+    color: #1d1d1f;
+    font-weight: 500;
+}
+
+.contact-form {
+    flex: 1.5;
+    padding: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.contact-form input, 
+.contact-form textarea {
+    width: 100%;
+    padding: 16px;
+    border-radius: 12px;
+    border: 1px solid #e5e5ea;
+    background-color: #f5f5f7;
+    font-family: inherit;
+    font-size: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus, 
+.contact-form textarea:focus {
+    border-color: #007aff;
+    background-color: #ffffff;
+    box-shadow: 0 0 0 3px rgba(0, 122, 255, 0.1);
+}
+
+.contact-form button {
+    background-color: #1d1d1f;
+    color: #ffffff;
+    padding: 16px;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 10px;
+}
+
+.contact-form button:hover {
+    background-color: #000000;
+}
+
+/* 8. Підвал */
+.footer {
+    text-align: center;
+    padding: 30px 0;
+    color: #86868b;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    font-size: 14px;
+}
